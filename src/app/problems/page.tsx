@@ -6,19 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { AlignJustify, Search, Home, BookOpen, Award, Settings, LogOut } from 'lucide-react'
+import { problems } from '@/lib/data'
 
-const problems = [
-  { id: 1, title: "Two Sum", difficulty: "Easy", acceptance: "48%", frequency: "High" },
-  { id: 2, title: "Add Two Numbers", difficulty: "Medium", acceptance: "39%", frequency: "Medium" },
-  { id: 3, title: "Longest Substring Without Repeating Characters", difficulty: "Medium", acceptance: "33%", frequency: "High" },
-  { id: 4, title: "Median of Two Sorted Arrays", difficulty: "Hard", acceptance: "35%", frequency: "Low" },
-  { id: 5, title: "Longest Palindromic Substring", difficulty: "Medium", acceptance: "31%", frequency: "Medium" },
-  { id: 6, title: "ZigZag Conversion", difficulty: "Medium", acceptance: "42%", frequency: "Low" },
-  { id: 7, title: "Reverse Integer", difficulty: "Medium", acceptance: "26%", frequency: "Medium" },
-  { id: 8, title: "String to Integer (atoi)", difficulty: "Medium", acceptance: "16%", frequency: "Low" },
-  { id: 9, title: "Palindrome Number", difficulty: "Easy", acceptance: "53%", frequency: "High" },
-  { id: 10, title: "Regular Expression Matching", difficulty: "Hard", acceptance: "28%", frequency: "Low" },
-]
+
 
 export default function Component() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -96,7 +86,7 @@ export default function Component() {
                   <div className="flex items-center justify-between py-4">
                     <div className="flex items-center">
                       <span className="text-sm font-medium text-zinc-400 w-8">{problem.id}.</span>
-                      <a href="#" className="text-blue-400 hover:text-blue-300 ml-2">{problem.title}</a>
+                      <a href={problem.link} className="text-blue-400 hover:text-blue-300 ml-2">{problem.title}</a>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Badge variant={problem.difficulty === 'Easy' ? 'secondary' : problem.difficulty === 'Medium' ? 'default' : 'destructive'}>
